@@ -5,10 +5,10 @@ const calculateFuel = (mass) => {
   return requiredFuel > 0 ? requiredFuel : 0;
 };
 
-const calculateFuelRecursive = (mass, acc = 0) => {
-  if (mass === 0) return acc;
+const calculateFuelRecursive = (mass) => {
+  if (mass === 0) return 0;
   const fuel = calculateFuel(mass);
-  return calculateFuelRecursive(fuel, acc + fuel);
+  return fuel + calculateFuelRecursive(fuel);
 };
 
 const calculateTotalFuel = (masses, fuelCalcFun) => {
