@@ -12,7 +12,7 @@
 (defun part2 (masses) (reduce #'+ (mapcar #'calc-fuel-recursive masses)))
 
 (defun get-inputs () 
-  (with-open-file (stream "./01-input")
+  (with-open-file (stream "../01-input")
     (loop for line = (read-line stream nil)
           while line
           collect (parse-integer line))))
