@@ -27,10 +27,10 @@ const withParameters = (verb, noun, input) =>
 console.log("Part 1: " + compute(withParameters(12, 2, input))[0]);
 
 const findParameters = (input, desiredResult) => {
-  for (let noun = 0; noun <= 99; noun++) {
-    for (let verb = 0; verb <= 99; verb++) {
-      const result = compute(withParameters(noun, verb, input))[0];
-      if (result === desiredResult) return [noun, verb];
+  for (let verb = 0; verb <= 99; verb++) {
+    for (let noun = 0; noun <= 99; noun++) {
+      const result = compute(withParameters(verb, noun, input))[0];
+      if (result === desiredResult) return [verb, noun];
     }
   }
 };
